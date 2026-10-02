@@ -1,0 +1,46 @@
+{
+  "name": "aura-docs-desktop",
+  "productName": "Aura Docs",
+  "version": "1.0.0",
+  "description": "Gestisci i documenti, collabora con il tuo team, sincronizza automaticamente e condividi i file tramite link: tutto integrato in Aura Docs, collegato al tuo account Aura. 🩷",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "install-desktop": "node src/install-desktop.js",
+    "dist:win": "electron-builder --win nsis",
+    "dist:linux": "electron-builder --linux AppImage",
+    "dist:mac": "electron-builder --mac dmg zip"
+  },
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "allowScripts": {
+    "electron@38.8.6": true
+  },
+  "build": {
+    "appId": "docs.aurastudioitalia.com",
+    "productName": "Aura Docs",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/imgs/docs.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Office",
+      "icon": "src/imgs/docs.png"
+    },
+    "mac": {
+      "target": ["dmg", "zip"],
+      "icon": "src/imgs/docs.icns"
+    }
+  }
+}
