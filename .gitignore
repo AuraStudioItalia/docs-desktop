@@ -1,0 +1,28 @@
+# Dependencies - NON COMMITTARE QUESTO!
+node_modules/
+
+# Build output
+dist/
+out/
+build/
+*.asar
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+
+# Test
+coverage/
+.nyc_output/
+
+# Logs
+*.log
+npm-debug.log*
